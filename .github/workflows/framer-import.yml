@@ -1,0 +1,37 @@
+name: Import images from Framer
+
+# Runs when Claude commits a fresh .github/image-jobs.json.
+# Downloads every image from Framer into public/images and uploads it into its Figma frame.
+on:
+  push:
+    branches: [main]
+    paths: ['.github/image-jobs.json']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: images
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-save --no-package-lock sharp@0.33
+      - run: node scripts/framer-to-figma.mjs
+      - name: Commit images and report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git rm -q .github/image-jobs.json
+          git add public/images .github/image-jobs-result.json
+          git commit -m "Import site images from Framer" || echo "Nothing to commit"
+          git pull --rebase
+          git push
