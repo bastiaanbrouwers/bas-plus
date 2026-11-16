@@ -1,0 +1,422 @@
+[
+  {
+    "slot": "annual-report/cover.jpg",
+    "bytes": 466992,
+    "saved": "public/images/annual-report/cover.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "annual-report/gallery-01.jpg",
+    "bytes": 186625,
+    "saved": "public/images/annual-report/gallery-01.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "bff-campaign/cover.png",
+    "bytes": 42501,
+    "saved": "public/images/bff-campaign/cover.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "bff-campaign/gallery-01.png",
+    "bytes": 22676,
+    "saved": "public/images/bff-campaign/gallery-01.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "bff-campaign/gallery-02.png",
+    "bytes": 58808,
+    "saved": "public/images/bff-campaign/gallery-02.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "bff-campaign/gallery-03.jpg",
+    "bytes": 225322,
+    "saved": "public/images/bff-campaign/gallery-03.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "bff-campaign/story-01.jpg",
+    "bytes": 212591,
+    "saved": "public/images/bff-campaign/story-01.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "brand-anthem/cover.gif",
+    "bytes": 503906,
+    "saved": "public/images/brand-anthem/cover.gif",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "brand-anthem/gallery-01.gif",
+    "bytes": 3715368,
+    "saved": "public/images/brand-anthem/gallery-01.gif",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "brand-anthem/gallery-02.gif",
+    "bytes": 1742173,
+    "saved": "public/images/brand-anthem/gallery-02.gif",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "brand-anthem/gallery-03.gif",
+    "bytes": 7656946,
+    "saved": "public/images/brand-anthem/gallery-03.gif",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "brand-anthem/story-01.jpg",
+    "bytes": 479404,
+    "saved": "public/images/brand-anthem/story-01.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "brand-refresh/cover.png",
+    "bytes": 29861,
+    "saved": "public/images/brand-refresh/cover.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "brand-refresh/gallery-01.png",
+    "bytes": 971537,
+    "saved": "public/images/brand-refresh/gallery-01.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "brand-refresh/gallery-02.png",
+    "bytes": 941953,
+    "saved": "public/images/brand-refresh/gallery-02.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "brand-refresh/gallery-03.png",
+    "bytes": 2382053,
+    "saved": "public/images/brand-refresh/gallery-03.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "brand-refresh/gallery-04.png",
+    "bytes": 68003,
+    "saved": "public/images/brand-refresh/gallery-04.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "brand-refresh/gallery-05.png",
+    "bytes": 2601115,
+    "saved": "public/images/brand-refresh/gallery-05.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "brand-refresh/gallery-06.png",
+    "bytes": 2753364,
+    "saved": "public/images/brand-refresh/gallery-06.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "brand-refresh/gallery-07.png",
+    "bytes": 2403509,
+    "saved": "public/images/brand-refresh/gallery-07.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "brand-refresh/gallery-08.png",
+    "bytes": 2469218,
+    "saved": "public/images/brand-refresh/gallery-08.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "brand-refresh/gallery-09.png",
+    "bytes": 775067,
+    "saved": "public/images/brand-refresh/gallery-09.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "brand-refresh/gallery-10.png",
+    "bytes": 1657103,
+    "saved": "public/images/brand-refresh/gallery-10.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "brand-refresh/gallery-11.png",
+    "bytes": 1667529,
+    "saved": "public/images/brand-refresh/gallery-11.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "brand-refresh/gallery-12.png",
+    "bytes": 1021421,
+    "saved": "public/images/brand-refresh/gallery-12.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "brand-refresh/gallery-13.png",
+    "bytes": 715013,
+    "saved": "public/images/brand-refresh/gallery-13.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "brand-refresh/story-01.png",
+    "bytes": 128246,
+    "saved": "public/images/brand-refresh/story-01.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "building-adyen-sans/cover.png",
+    "bytes": 915958,
+    "saved": "public/images/building-adyen-sans/cover.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "building-adyen-sans/gallery-01.jpg",
+    "bytes": 184936,
+    "saved": "public/images/building-adyen-sans/gallery-01.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "building-adyen-sans/gallery-02.jpg",
+    "bytes": 450329,
+    "saved": "public/images/building-adyen-sans/gallery-02.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "building-adyen-sans/gallery-03.jpg",
+    "bytes": 340740,
+    "saved": "public/images/building-adyen-sans/gallery-03.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "building-adyen-sans/gallery-04.jpg",
+    "bytes": 332968,
+    "saved": "public/images/building-adyen-sans/gallery-04.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "building-adyen-sans/gallery-05.jpg",
+    "bytes": 317878,
+    "saved": "public/images/building-adyen-sans/gallery-05.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "building-adyen-sans/gallery-06.gif",
+    "bytes": 848143,
+    "saved": "public/images/building-adyen-sans/gallery-06.gif",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "building-adyen-sans/gallery-07.jpg",
+    "bytes": 243683,
+    "saved": "public/images/building-adyen-sans/gallery-07.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "building-adyen-sans/gallery-08.gif",
+    "bytes": 257825,
+    "saved": "public/images/building-adyen-sans/gallery-08.gif",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "building-adyen-sans/gallery-09.gif",
+    "bytes": 712978,
+    "saved": "public/images/building-adyen-sans/gallery-09.gif",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "building-adyen-sans/gallery-10.gif",
+    "bytes": 840973,
+    "saved": "public/images/building-adyen-sans/gallery-10.gif",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "building-adyen-sans/gallery-11.gif",
+    "bytes": 881241,
+    "saved": "public/images/building-adyen-sans/gallery-11.gif",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "case-studies/cover.jpg",
+    "bytes": 306913,
+    "saved": "public/images/case-studies/cover.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "case-studies/gallery-01.png",
+    "bytes": 2503741,
+    "saved": "public/images/case-studies/gallery-01.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "case-studies/gallery-02.jpg",
+    "bytes": 148010,
+    "saved": "public/images/case-studies/gallery-02.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "case-studies/gallery-03.png",
+    "bytes": 742131,
+    "saved": "public/images/case-studies/gallery-03.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "case-studies/gallery-04.jpg",
+    "bytes": 436770,
+    "saved": "public/images/case-studies/gallery-04.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "case-studies/gallery-05.jpg",
+    "bytes": 492142,
+    "saved": "public/images/case-studies/gallery-05.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "case-studies/story-01.png",
+    "bytes": 1707126,
+    "saved": "public/images/case-studies/story-01.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "photography/cover.jpg",
+    "bytes": 6229150,
+    "saved": "public/images/photography/cover.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "photography/gallery-01.jpg",
+    "bytes": 3093341,
+    "saved": "public/images/photography/gallery-01.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "photography/gallery-02.jpg",
+    "bytes": 2209194,
+    "saved": "public/images/photography/gallery-02.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "photography/gallery-03.jpg",
+    "bytes": 6229150,
+    "saved": "public/images/photography/gallery-03.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "photography/gallery-04.jpg",
+    "bytes": 6960121,
+    "saved": "public/images/photography/gallery-04.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "photography/gallery-05.jpg",
+    "bytes": 498264,
+    "saved": "public/images/photography/gallery-05.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "photography/gallery-06.jpg",
+    "bytes": 294241,
+    "saved": "public/images/photography/gallery-06.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "photography/gallery-07.png",
+    "bytes": 656602,
+    "saved": "public/images/photography/gallery-07.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "photography/gallery-08.png",
+    "bytes": 1180310,
+    "saved": "public/images/photography/gallery-08.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "photography/gallery-09.png",
+    "bytes": 1106576,
+    "saved": "public/images/photography/gallery-09.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "photography/gallery-10.png",
+    "bytes": 895312,
+    "saved": "public/images/photography/gallery-10.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "scaling-creativity-with-ai/cover.png",
+    "bytes": 14122,
+    "saved": "public/images/scaling-creativity-with-ai/cover.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "scaling-creativity-with-ai/gallery-01.gif",
+    "bytes": 344845,
+    "saved": "public/images/scaling-creativity-with-ai/gallery-01.gif",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "scaling-creativity-with-ai/gallery-02.jpg",
+    "bytes": 144085,
+    "saved": "public/images/scaling-creativity-with-ai/gallery-02.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "scaling-creativity-with-ai/gallery-03.jpg",
+    "bytes": 318310,
+    "saved": "public/images/scaling-creativity-with-ai/gallery-03.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "scaling-creativity-with-ai/gallery-04.jpg",
+    "bytes": 174591,
+    "saved": "public/images/scaling-creativity-with-ai/gallery-04.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "selling-luxury/cover.png",
+    "bytes": 2045893,
+    "saved": "public/images/selling-luxury/cover.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "selling-luxury/gallery-01.png",
+    "bytes": 2045893,
+    "saved": "public/images/selling-luxury/gallery-01.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "selling-luxury/gallery-02.png",
+    "bytes": 2856321,
+    "saved": "public/images/selling-luxury/gallery-02.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "selling-luxury/gallery-03.png",
+    "bytes": 3550930,
+    "saved": "public/images/selling-luxury/gallery-03.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "selling-luxury/gallery-04.png",
+    "bytes": 2821472,
+    "saved": "public/images/selling-luxury/gallery-04.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "site/grain.png",
+    "bytes": 22927,
+    "saved": "public/images/site/grain.png",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "site/og.jpg",
+    "bytes": 1094074,
+    "saved": "public/images/site/og.jpg",
+    "figma": "uploaded"
+  },
+  {
+    "slot": "site/portrait.jpg",
+    "bytes": 106780,
+    "saved": "public/images/site/portrait.jpg",
+    "figma": "uploaded"
+  }
+]
