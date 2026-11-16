@@ -1,0 +1,147 @@
+---
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isCurrent = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
+const links = [
+  { href: '/projects', label: 'projects', green: true },
+  { href: '/about', label: 'about' },
+  { href: '/contact', label: 'contact' },
+];
+---
+
+<header class="nav">
+  <div class="wrap">
+    <div class="inner">
+      <a href="/" class:list={['name', { current: isCurrent('/') }]}>bas brouwers</a>
+      <nav class="links" aria-label="Main">
+        {
+          links.map((l) => (
+            <a href={l.href} class:list={[{ green: l.green, current: isCurrent(l.href) }]}>
+              {l.label}
+            </a>
+          ))
+        }
+      </nav>
+      <button class="menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span>menu</span>
+        <span class="bars" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="mobile" hidden>
+    <div class="wrap">
+      {
+        links.map((l) => (
+          <a href={l.href} class:list={['h2', { green: l.green }]}>
+            {l.label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('.nav .menu');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    if (menu) menu.hidden = open;
+  });
+</script>
+
+<style>
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: var(--black);
+  }
+  .inner {
+    height: var(--nav-h);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--white);
+    font-size: 18px;
+    letter-spacing: -0.4px;
+    line-height: 1.75em;
+  }
+  .name {
+    font-size: 20px;
+  }
+  .name,
+  .links a {
+    color: var(--white-50);
+    transition: color 0.2s ease;
+  }
+  .name:hover,
+  .links a:hover,
+  .name.current,
+  .links a.current {
+    color: var(--white);
+  }
+  .links {
+    display: flex;
+    gap: 48px;
+  }
+  .links a.green {
+    color: var(--green);
+  }
+  .links a.green:hover,
+  .links a.green.current {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+  .menu {
+    display: none;
+    align-items: center;
+    gap: 12px;
+    background: none;
+    border: 0;
+    padding: 0;
+    color: var(--white-50);
+    font: inherit;
+    cursor: pointer;
+  }
+  .bars {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .bars i {
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--white-50);
+  }
+  .mobile {
+    background: var(--black);
+    padding: 24px 0 40px;
+    border-bottom: 1px solid var(--white-25);
+  }
+  .mobile .wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .mobile[hidden] {
+    display: none;
+  }
+  .mobile a {
+    color: var(--white-50);
+  }
+  .mobile a.green {
+    color: var(--green);
+  }
+  @media (max-width: 809.98px) {
+    .links {
+      display: none;
+    }
+    .menu {
+      display: flex;
+    }
+  }
+</style>

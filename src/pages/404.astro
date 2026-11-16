@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import Arrow from '../components/Arrow.astro';
+---
+
+<Base title="not found - bas brouwers" noindex>
+  <section class="wrap nf">
+    <h1 class="h1">this page doesn't exist.</h1>
+    <div class="grid8">
+      <a href="/projects" class="btn cta">see projects <Arrow /></a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .nf {
+    min-height: 70vh;
+    padding-top: calc(var(--nav-h) + 96px);
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+  .cta {
+    grid-column: 1 / span 2;
+  }
+</style>

@@ -1,0 +1,330 @@
+---
+import Base from '../../layouts/Base.astro';
+import SayHello from '../../components/SayHello.astro';
+import Arrow from '../../components/Arrow.astro';
+import { allProjects, publicProjects, youtubeEmbed, pad } from '../../lib/projects';
+import { render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const items = await allProjects();
+  return items.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+const videos = d.videos.map(youtubeEmbed).filter(Boolean) as string[];
+const others = (await publicProjects()).filter((p) => p.id !== entry.id);
+---
+
+<Base title={`${d.title} - bas brouwers`} description={d.tagline} image={d.cover} noindex={d.visibility !== 'public'}>
+  <article>
+    <header class="wrap hero">
+      <h1 class="h1 reveal">{d.title}</h1>
+      <div class="grid8 desc-row reveal">
+        <p class="h3 desc">{d.tagline}</p>
+      </div>
+    </header>
+
+    <figure class="wrap cover reveal">
+      <p class="label small">00</p>
+      <img src={d.cover} alt="" loading="eager" decoding="async" />
+    </figure>
+
+    {
+      (d.problem || d.solution) && (
+        <section class="wrap section grid8 ps reveal">
+          {d.problem && (
+            <div class="ps-item problem">
+              <p class="label small">problem</p>
+              <p class="body text">{d.problem}</p>
+            </div>
+          )}
+          {d.solution && (
+            <div class="ps-item solution">
+              <p class="label small">solution</p>
+              <p class="body text">{d.solution}</p>
+            </div>
+          )}
+          <span class="marker" style="top:0" />
+        </section>
+      )
+    }
+
+    <section class="wrap section grid8 story">
+      <div class="prose reveal">
+        <Content />
+      </div>
+      <aside class="stats small">
+        <div>
+          <p class="label">year</p>
+          <p class="value">{d.year}</p>
+        </div>
+        <div>
+          <p class="label">category</p>
+          <p class="value">{d.discipline}</p>
+        </div>
+      </aside>
+    </section>
+
+    {
+      videos.length > 0 && (
+        <section class="wrap section videos">
+          {videos.map((src, i) => (
+            <figure class="video reveal">
+              <p class="label small">video {pad(i + 1)}</p>
+              <div class="frame">
+                <iframe
+                  src={src}
+                  title={`${d.title} video ${i + 1}`}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                />
+              </div>
+            </figure>
+          ))}
+        </section>
+      )
+    }
+
+    {
+      d.gallery.length > 0 && (
+        <section class="wrap section gallery">
+          {d.gallery.map((img, i) => (
+            <figure class="shot reveal">
+              <p class="label small">{pad(i + 1)}</p>
+              <img src={img.src} alt={img.alt} loading="lazy" decoding="async" />
+              {img.alt && <figcaption class="small">{img.alt}</figcaption>}
+            </figure>
+          ))}
+        </section>
+      )
+    }
+
+    <section class="wrap section other">
+      <p class="label small">see also</p>
+      <ul>
+        {
+          others.map((p) => (
+            <li class="reveal">
+              <a href={`/work/${p.id}/`} style={`--card-bg:${p.data.cardBg};--card-fg:${p.data.cardFg}`}>
+                <span class="thumb">
+                  <img src={p.data.cover} alt="" loading="lazy" decoding="async" />
+                </span>
+                <span class="txt">
+                  <span class="small cat">{p.data.discipline}</span>
+                  <span class="h3 ttl">{p.data.title}</span>
+                </span>
+                <span class="go">
+                  <Arrow size={28} />
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </article>
+
+  <SayHello />
+</Base>
+
+<style>
+  .hero {
+    padding-top: calc(var(--nav-h) + 24px);
+  }
+  .desc-row {
+    margin-top: 32px;
+  }
+  .desc {
+    grid-column: 3 / span 4;
+    color: var(--white);
+  }
+  .cover {
+    margin-top: 96px;
+  }
+  .cover img,
+  .shot img {
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .ps {
+    position: relative;
+    align-items: start;
+  }
+  .ps-item {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .problem {
+    grid-column: 1 / span 3;
+  }
+  .solution {
+    grid-column: 5 / span 3;
+  }
+  .text {
+    white-space: pre-line;
+  }
+
+  .story {
+    align-items: start;
+  }
+  .prose {
+    grid-column: 1 / span 5;
+  }
+  .prose :global(h3) {
+    font-weight: 500;
+    font-size: 32px;
+    letter-spacing: -0.3px;
+    line-height: 1.75em;
+    color: var(--white);
+    margin: 0 0 24px;
+  }
+  .prose :global(p) {
+    font-size: 20px;
+    letter-spacing: -0.4px;
+    line-height: 1.75em;
+    color: var(--white-50);
+    margin: 0 0 24px;
+  }
+  .prose :global(p img) {
+    width: 100%;
+    margin: 24px 0;
+  }
+  .prose :global(a) {
+    color: var(--green);
+  }
+  .prose :global(a:hover) {
+    text-decoration: underline;
+  }
+  .stats {
+    grid-column: 7 / span 2;
+    position: sticky;
+    top: calc(var(--nav-h) + 40px);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .stats .value {
+    margin-top: 16px;
+    font-family: var(--sans);
+    font-size: 20px;
+    letter-spacing: -0.4px;
+    color: var(--white);
+  }
+
+  .videos,
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 96px;
+  }
+  .frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    margin-top: 16px;
+    background: #111;
+  }
+  .frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .shot figcaption {
+    max-width: 600px;
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+
+  .other ul {
+    list-style: none;
+    margin: 32px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .other a {
+    display: grid;
+    grid-template-columns: 2fr 5fr auto;
+    align-items: center;
+    gap: 24px;
+    padding: 8px 24px 8px 8px;
+    background: var(--card-bg);
+    color: var(--card-fg);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .other a:hover {
+    transform: translateX(8px);
+  }
+  .thumb {
+    display: block;
+    aspect-ratio: 284 / 84;
+    overflow: hidden;
+  }
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .txt {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .cat {
+    color: var(--card-fg);
+  }
+  .go {
+    display: flex;
+  }
+
+  @media (max-width: 1023.98px) {
+    .desc {
+      grid-column: 2 / span 6;
+    }
+    .prose {
+      grid-column: 1 / span 6;
+    }
+    .stats {
+      grid-column: 7 / span 2;
+      padding-left: 24px;
+    }
+  }
+  @media (max-width: 809.98px) {
+    .cover {
+      margin-top: 48px;
+    }
+    .ps {
+      gap: 48px;
+    }
+    .stats {
+      position: static;
+      flex-direction: row;
+      gap: 48px;
+      padding: 0;
+    }
+    .stats > div {
+      flex: 1;
+    }
+    .prose :global(h3) {
+      font-size: 20px;
+      line-height: 1.5em;
+    }
+    .prose :global(p) {
+      font-size: 18px;
+    }
+    .other a {
+      grid-template-columns: 1fr auto;
+      padding: 16px;
+    }
+    .thumb {
+      display: none;
+    }
+  }
+</style>

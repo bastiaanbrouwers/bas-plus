@@ -1,0 +1,20 @@
+---
+// "right" is the → used on cards. "up" is the ↗ used on buttons and lists.
+interface Props {
+  dir?: 'right' | 'up';
+  size?: number;
+}
+const { dir = 'up', size = 14 } = Astro.props;
+---
+
+{
+  dir === 'right' ? (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M3 12h17M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.6" />
+    </svg>
+  ) : (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M6 18L18 6M8 6h10v10" stroke="currentColor" stroke-width="1.6" />
+    </svg>
+  )
+}

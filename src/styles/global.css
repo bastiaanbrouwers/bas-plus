@@ -1,0 +1,327 @@
+@import '@fontsource/manrope/400.css';
+@import '@fontsource/manrope/500.css';
+@import '@fontsource/dm-mono/300.css';
+
+/*
+  Tokens and type scale taken from the Framer project "portfolio".
+  Breakpoints match Framer: 1440, 1024, 810.
+*/
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --white-50: rgba(255, 255, 255, 0.5);
+  --white-25: rgba(255, 255, 255, 0.25);
+  --white-10: rgba(255, 255, 255, 0.1);
+  --green: #00ff77;
+
+  --sans: 'Manrope', 'Manrope Placeholder', system-ui, sans-serif;
+  --mono: 'DM Mono', ui-monospace, monospace;
+
+  --pad: 120px; /* side padding */
+  --section: 180px; /* gap between sections */
+  --nav-h: 84px;
+  --max: 1920px;
+  --radius: 8px;
+}
+@media (max-width: 1439.98px) {
+  :root {
+    --pad: 80px;
+    --section: 160px;
+  }
+}
+@media (max-width: 1023.98px) {
+  :root {
+    --pad: 48px;
+    --section: 120px;
+  }
+}
+@media (max-width: 809.98px) {
+  :root {
+    --pad: 24px;
+    --section: 80px;
+    --nav-h: 72px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  overflow-x: clip;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--sans);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: clip;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+p,
+figure {
+  margin: 0;
+}
+::selection {
+  background: var(--green);
+  color: #000;
+}
+
+/* Layout */
+.wrap {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+.grid8 {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+.section {
+  margin-top: var(--section);
+}
+@media (max-width: 809.98px) {
+  .grid8 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .grid8 > * {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+/* Background column lines: 9 lines mark the 8 columns */
+.bg-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: max(100vh, 1100px);
+  z-index: -1;
+  pointer-events: none;
+}
+.bg-lines .wrap {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.bg-lines span {
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 70%, rgba(255, 255, 255, 0) 100%);
+}
+@media (max-width: 809.98px) {
+  .bg-lines span:nth-child(even) {
+    display: none;
+  }
+}
+
+/* Type scale */
+.h1 {
+  font-weight: 500;
+  font-size: 96px;
+  letter-spacing: -4px;
+  line-height: 1.25em;
+}
+.h2 {
+  font-weight: 500;
+  font-size: 64px;
+  letter-spacing: -2.7px;
+  line-height: 1.35em;
+}
+.h3 {
+  font-weight: 500;
+  font-size: 32px;
+  letter-spacing: -0.3px;
+  line-height: 1.75em;
+}
+.body {
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: -0.4px;
+  line-height: 1.75em;
+  color: var(--white-50);
+}
+.small {
+  font-family: var(--mono);
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 1.4em;
+  color: var(--white-50);
+}
+@media (max-width: 1439.98px) {
+  .h1 {
+    font-size: 70px;
+  }
+  .h2 {
+    font-size: 40px;
+    letter-spacing: -1px;
+  }
+  .h3 {
+    font-size: 24px;
+    letter-spacing: -0.4px;
+    line-height: 1.5em;
+  }
+}
+@media (max-width: 1199.98px) {
+  .small {
+    font-size: 12px;
+  }
+}
+@media (max-width: 1023.98px) {
+  .h1 {
+    font-size: 55px;
+    letter-spacing: -1.2px;
+  }
+  .h2 {
+    font-size: 32px;
+    letter-spacing: -0.5px;
+  }
+  .h3 {
+    font-size: 20px;
+    letter-spacing: -0.2px;
+  }
+}
+@media (max-width: 809.98px) {
+  .h1 {
+    font-size: 36px;
+    letter-spacing: -1px;
+  }
+  .h2 {
+    font-size: 24px;
+    letter-spacing: -0.3px;
+  }
+  .body {
+    font-size: 18px;
+  }
+}
+
+/* Section label: ".about" followed by a rule */
+.label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--white-25);
+}
+
+/* Decorative marker: a short line with a circle, sat on the right edge */
+.marker {
+  position: absolute;
+  right: -36px;
+  width: 72px;
+  height: 24px;
+  pointer-events: none;
+}
+.marker::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: var(--white-25);
+}
+.marker::after {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--white-25);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+/* A marker placed directly in a padded .wrap sits on the content edge, not the viewport edge */
+.wrap > .marker {
+  right: calc(var(--pad) - 36px);
+}
+@media (max-width: 809.98px) {
+  .marker {
+    display: none;
+  }
+}
+
+/* Outline button with arrow */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 52px;
+  padding: 0 24px;
+  border: 1px solid var(--white-50);
+  color: var(--white-50);
+  font-family: var(--mono);
+  font-weight: 300;
+  font-size: 14px;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+.btn svg {
+  transition: transform 0.3s ease;
+}
+.btn:hover {
+  background: var(--white);
+  color: var(--black);
+}
+.btn:hover svg {
+  transform: rotate(45deg);
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(80px);
+  transition:
+    opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+.no-js .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

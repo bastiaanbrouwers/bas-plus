@@ -1,0 +1,101 @@
+---
+import Arrow from './Arrow.astro';
+
+interface Props {
+  slug: string;
+  title: string;
+  year: string;
+  discipline: string;
+  cardBg: string;
+  cardFg: string;
+  cover: string;
+  eager?: boolean;
+}
+
+const { slug, title, year, discipline, cardBg, cardFg, cover, eager = false } = Astro.props;
+---
+
+<a href={`/work/${slug}/`} class="card" style={`--card-bg:${cardBg};--card-fg:${cardFg}`}>
+  <div class="meta small">
+    <span>{year}</span>
+    <span>{discipline}</span>
+  </div>
+  <div class="rule"></div>
+  <div class="head">
+    <h2 class="h2 title">{title}</h2>
+    <span class="arrow"><Arrow dir="right" size={36} /></span>
+  </div>
+  <div class="media">
+    <img src={cover} alt="" loading={eager ? 'eager' : 'lazy'} decoding="async" />
+  </div>
+</a>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border: 1px solid var(--white-10);
+    border-radius: var(--radius);
+    background: var(--card-bg);
+    color: var(--card-fg);
+    overflow: hidden;
+    box-shadow:
+      0 -4px 20px -0.3px rgba(0, 0, 0, 0.08),
+      0 -17px 87px -0.9px rgba(0, 0, 0, 0.08),
+      0 -76px 383px -1.9px rgba(0, 0, 0, 0.08),
+      0 -240px 1200px -2.5px rgba(0, 0, 0, 0.08);
+  }
+  .meta {
+    display: flex;
+    justify-content: space-between;
+    color: var(--card-fg);
+  }
+  .rule {
+    height: 1px;
+    margin: 14px 0 6px;
+    background: var(--card-fg);
+    opacity: 0.25;
+  }
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 16px;
+  }
+  .arrow {
+    flex: none;
+    display: flex;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .card:hover .arrow {
+    transform: translateX(8px);
+  }
+  .media {
+    position: relative;
+    aspect-ratio: 1.35;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .card:hover .media img {
+    transform: scale(1.03);
+  }
+  @media (max-width: 809.98px) {
+    .card {
+      padding: 16px;
+    }
+    .arrow :global(svg) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+</style>

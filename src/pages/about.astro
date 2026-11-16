@@ -1,0 +1,258 @@
+---
+import Base from '../layouts/Base.astro';
+import SayHello from '../components/SayHello.astro';
+
+// Copied from the "Process Step" components on the Framer about page.
+const roles = [
+  {
+    years: '2021 — Now',
+    place: 'Adyen HQ',
+    role: 'Principal Creative / Creation Direction',
+    text: 'Leading creative direction across brand, content, and campaigns at a global scale. Responsible for strategic creative output, team leadership, and connecting design, marketing, and product to work that drives real business impact.',
+  },
+  {
+    years: '2024 — 2025',
+    place: 'Adyen San Francisco',
+    role: 'Creative Studio Team Lead',
+    text: "Interim lead for Adyen's North America creative studio, based in San Francisco. Overseeing day-to-day creative operations, aligning the local team with global brand direction, and maintaining momentum across a high-output, cross-functional environment.",
+  },
+  {
+    years: '2017— 2021',
+    place: 'Adyen HQ',
+    role: 'Senior Creative',
+    text: "Hands-on creative across campaigns, brand, and content during a period of rapid company growth. Contributed to Adyen's IPO communications, investor materials, and global marketing — building a foundation for the creative function that would scale significantly in the years that followed",
+  },
+  {
+    years: '2012 — 2017',
+    place: 'Luidspreker',
+    role: 'Co-founder, Co-owner, Creative',
+    text: 'Co-founded and ran an independent creative studio for five years. Responsible for creative direction, client relationships, and business development across branding, design, and content projects.',
+  },
+  {
+    years: '2005 — 2007',
+    place: 'Freelance',
+    role: 'Designer',
+    text: 'Over a decade of freelance design work across branding, print, and digital. Built a broad creative foundation working with a wide range of clients and industries.',
+  },
+  {
+    years: '2014 — 2015',
+    place: 'MA - Amsterdam',
+    role: 'Teacher Design',
+    text: "Taught (graphic) design to students at one of Amsterdam's leading creative colleges — a side track during the Studio Luidspreker years that sharpened how I think about communicating creative principles clearly.",
+  },
+];
+
+const facts = [
+  { k: '.experience', v: '15+ years' },
+  { k: '.location', v: 'Amsterdam' },
+  { k: '.current', v: 'Adyen' },
+];
+---
+
+<Base title="about - bas brouwers">
+  <section class="wrap head">
+    <h1 class="h1 reveal">about</h1>
+    <div class="grid8 intro-row reveal">
+      <p class="h2 intro">
+        i'm a creative director, brand builder, team scaler, and food enthusiast who makes complex things land
+      </p>
+    </div>
+    <span class="marker" style="top:calc(var(--nav-h) + 40px)"></span>
+  </section>
+
+  <section class="wrap section grid8 facts reveal">
+    {
+      facts.map((f) => (
+        <div class="fact">
+          <p class="label small">{f.k}</p>
+          <p class="fv">{f.v}</p>
+        </div>
+      ))
+    }
+  </section>
+
+  <section class="wrap section grid8 me">
+    <div class="portrait reveal">
+      <img
+        src="https://framerusercontent.com/images/5N2qntQCPUeOJem27W3d57vVzjI.jpg"
+        alt="Portrait of Bas Brouwers"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="grain" aria-hidden="true"></div>
+    </div>
+    <div class="hello reveal">
+      <p class="label small">.hello</p>
+      <div class="h3 hello-copy">
+        <p>my thing is making creativity work. not just the beauty, but clear, relevant, and built to drive real impact.</p>
+        <p>
+          i've spent 8 years at adyen turning complex fintech into work people actually connect with. scaling a team from 5 to 50 taught me that the best results come from high-trust environments, sharp briefs, and people who genuinely enjoy the work.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section cv">
+    <p class="label small">.work experience</p>
+    <ul>
+      {
+        roles.map((r) => (
+          <li class="grid8 reveal">
+            <span class="years">{r.years}</span>
+            <span class="place">
+              <span class="pl">{r.place}</span>
+              <span class="role">{r.role}</span>
+            </span>
+            <span class="desc">{r.text}</span>
+            <span class="marker" style="bottom:-12px" />
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <SayHello />
+</Base>
+
+<style>
+  .head {
+    position: relative;
+    padding-top: calc(var(--nav-h) + 24px);
+  }
+  .intro-row {
+    margin-top: 96px;
+  }
+  .intro {
+    grid-column: 2 / span 7;
+    color: var(--white);
+  }
+  .facts {
+    row-gap: 32px;
+  }
+  .fact {
+    grid-column: span 2;
+    padding-right: 48px;
+  }
+  .fact:nth-child(1) {
+    grid-column: 1 / span 2;
+  }
+  .fact:nth-child(2) {
+    grid-column: 4 / span 2;
+  }
+  .fact:nth-child(3) {
+    grid-column: 7 / span 2;
+    padding-right: 0;
+  }
+  .fv {
+    margin-top: 16px;
+    font-size: 20px;
+    letter-spacing: -0.4px;
+  }
+
+  .me {
+    align-items: start;
+  }
+  .portrait {
+    grid-column: 1 / span 4;
+    position: relative;
+    aspect-ratio: 1408 / 1828;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  .portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .grain {
+    position: absolute;
+    inset: 0;
+    background: url('https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png');
+    background-size: 256px 256px;
+    opacity: 0.08;
+  }
+  .hello {
+    grid-column: 6 / span 3;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .hello-copy {
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+  }
+
+  .cv ul {
+    list-style: none;
+    margin: 48px 0 0;
+    padding: 0;
+  }
+  .cv li {
+    position: relative;
+    padding: 48px 0;
+    border-bottom: 1px solid var(--white-25);
+    align-items: start;
+  }
+  .years {
+    grid-column: 1 / span 3;
+    font-size: 20px;
+    letter-spacing: -0.4px;
+  }
+  .place {
+    grid-column: 4 / span 3;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-right: 24px;
+  }
+  .pl {
+    font-size: 20px;
+    letter-spacing: -0.4px;
+    line-height: 1.6;
+  }
+  .role {
+    font-size: 12px;
+    color: var(--white-50);
+  }
+  .desc {
+    grid-column: 7 / span 2;
+    font-size: 12px;
+    line-height: 1.75;
+    color: var(--white-50);
+  }
+
+  @media (max-width: 1023.98px) {
+    .intro {
+      grid-column: 1 / span 7;
+    }
+    .portrait {
+      grid-column: 1 / span 4;
+    }
+    .hello {
+      grid-column: 5 / span 4;
+      padding-left: 24px;
+    }
+  }
+  @media (max-width: 809.98px) {
+    .intro-row {
+      margin-top: 48px;
+    }
+    .fact {
+      padding-right: 0;
+    }
+    .me {
+      gap: 40px;
+    }
+    .hello {
+      padding-left: 0;
+    }
+    .cv li {
+      gap: 12px;
+      padding: 32px 0;
+    }
+    .desc {
+      font-size: 14px;
+    }
+  }
+</style>

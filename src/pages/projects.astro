@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import SayHello from '../components/SayHello.astro';
+import { publicProjects } from '../lib/projects';
+
+const projects = await publicProjects();
+---
+
+<Base title="projects - bas brouwers">
+  <section class="wrap head reveal">
+    <h1 class="h1">projects</h1>
+  </section>
+
+  <section class="wrap list">
+    {
+      projects.map((p, i) => (
+        <div class="grid8 row reveal">
+          <div class="card-col">
+            <ProjectCard slug={p.id} {...p.data} eager={i < 2} />
+          </div>
+          <p class="tagline small">{p.data.tagline}</p>
+          <span class="marker" style="bottom:-12px" />
+        </div>
+      ))
+    }
+  </section>
+
+  <SayHello />
+</Base>
+
+<style>
+  .head {
+    padding-top: calc(var(--nav-h) + 24px);
+    padding-bottom: 96px;
+  }
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+  }
+  .row {
+    position: relative;
+    align-items: start;
+  }
+  .card-col {
+    grid-column: 1 / span 6;
+  }
+  .tagline {
+    grid-column: 8 / span 1;
+    padding-top: 4px;
+  }
+  @media (max-width: 1023.98px) {
+    .card-col {
+      grid-column: 1 / span 6;
+    }
+    .tagline {
+      grid-column: 7 / span 2;
+      padding-left: 24px;
+    }
+    .list {
+      gap: 64px;
+    }
+  }
+  @media (max-width: 809.98px) {
+    .tagline {
+      padding: 16px 0 0;
+    }
+    .list {
+      gap: 48px;
+    }
+  }
+</style>

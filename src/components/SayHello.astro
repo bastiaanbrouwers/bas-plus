@@ -1,0 +1,33 @@
+---
+import Arrow from './Arrow.astro';
+---
+
+<section class="wrap section hello reveal">
+  <p class="label small">.say hello</p>
+  <div class="grid8 body-row">
+    <h2 class="h2 statement">
+      want to talk strategy, creative direction, the next AI fascination or the perfect vinyl for a Monday morning? let's connect.
+    </h2>
+  </div>
+  <div class="grid8 actions">
+    <a href="/contact" class="btn cta">contact me <Arrow /></a>
+    <span class="marker" style="top:14px"></span>
+  </div>
+</section>
+
+<style>
+  .body-row {
+    margin-top: 48px;
+  }
+  .statement {
+    grid-column: 1 / span 6;
+    color: var(--white);
+  }
+  .actions {
+    position: relative;
+    margin-top: 48px;
+  }
+  .cta {
+    grid-column: 5 / span 2;
+  }
+</style>

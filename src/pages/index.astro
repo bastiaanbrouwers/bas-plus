@@ -1,0 +1,117 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import AboutBlock from '../components/AboutBlock.astro';
+import SayHello from '../components/SayHello.astro';
+import { homeProjects } from '../lib/projects';
+
+const cards = await homeProjects();
+const phrases = [
+  'making complex things clear',
+  'building teams that actually ship',
+  'brand, content & AI',
+  'the work behind the work',
+  'creative automation',
+];
+---
+
+<Base>
+  <section class="wrap hero reveal">
+    <h1 class="h1">
+      a strategic creative director with a thing for <span class="rot" aria-label={phrases.join(', ')}
+        ><span class="track" aria-hidden="true">
+          {phrases.map((p) => <span>{p}</span>)}
+          <span>{phrases[0]}</span>
+        </span></span
+      >
+    </h1>
+    <span class="marker" style="bottom:48px"></span>
+  </section>
+
+  <section class="wrap cards" aria-label="Selected projects">
+    {
+      cards.map((p, i) => (
+        <div class="reveal">
+          <ProjectCard slug={p.id} {...p.data} eager={i === 0} />
+        </div>
+      ))
+    }
+  </section>
+
+  <AboutBlock />
+  <SayHello />
+</Base>
+
+<script>
+  const track = document.querySelector<HTMLElement>('.hero .track');
+  if (track && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const total = track.children.length - 1;
+    let i = 0;
+    setInterval(() => {
+      i += 1;
+      const step = (track.children[0] as HTMLElement).getBoundingClientRect().height;
+      track.style.transition = 'transform 0.7s cubic-bezier(0.7, 0, 0.2, 1)';
+      track.style.transform = `translateY(${-i * step}px)`;
+      if (i === total) {
+        setTimeout(() => {
+          track.style.transition = 'none';
+          track.style.transform = 'translateY(0)';
+          i = 0;
+        }, 750);
+      }
+    }, 2600);
+  }
+</script>
+
+<style>
+  .hero {
+    position: relative;
+    padding-top: calc(var(--nav-h) + 96px);
+    padding-bottom: var(--section);
+  }
+  .hero h1 {
+    color: var(--white);
+  }
+  .rot {
+    display: inline-flex;
+    height: 1.25em;
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+  .track {
+    display: flex;
+    flex-direction: column;
+  }
+  .track span {
+    display: block;
+    height: 1.25em;
+    white-space: nowrap;
+  }
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 140px;
+  }
+  @media (max-width: 1023.98px) {
+    .cards {
+      gap: 64px;
+    }
+  }
+  @media (max-width: 809.98px) {
+    .hero {
+      padding-top: calc(var(--nav-h) + 56px);
+    }
+    /* Phrases wrap on phones, so each slot is two lines tall */
+    .rot {
+      display: flex;
+      height: 2.5em;
+    }
+    .track span {
+      height: 2.5em;
+      white-space: normal;
+    }
+    .cards {
+      gap: 40px;
+    }
+  }
+</style>
