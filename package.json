@@ -4,18 +4,23 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "predev": "node scripts/optimise-images.mjs",
     "dev": "astro dev",
+    "prebuild": "node scripts/optimise-images.mjs",
     "build": "astro build",
     "preview": "astro preview",
-    "deploy": "astro build && wrangler deploy"
+    "deploy": "npm run build && wrangler deploy",
+    "images:slots": "node scripts/build-image-slots.mjs"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bastiaanbrouwers/bas-plus.git"
   },
   "dependencies": {
+    "@astrojs/markdown-remark": "^7.3.9",
     "@fontsource/dm-mono": "^5.3.0",
     "@fontsource/manrope": "^5.3.0",
-    "astro": "^7.4.12"
+    "astro": "^7.4.12",
+    "sharp": "^0.34.5"
   }
 }

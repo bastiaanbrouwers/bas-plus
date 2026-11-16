@@ -1,5 +1,6 @@
 ---
 import Arrow from './Arrow.astro';
+import { img } from '../lib/img';
 
 interface Props {
   slug: string;
@@ -26,7 +27,7 @@ const { slug, title, year, discipline, cardBg, cardFg, cover, eager = false } = 
     <span class="arrow"><Arrow dir="right" size={36} /></span>
   </div>
   <div class="media">
-    <img src={cover} alt="" loading={eager ? 'eager' : 'lazy'} decoding="async" />
+    <img {...img(cover, '(min-width: 810px) 75vw, 100vw')} alt="" loading={eager ? 'eager' : 'lazy'} decoding="async" />
   </div>
 </a>
 

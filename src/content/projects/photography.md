@@ -6,7 +6,7 @@ tagline: how hard could it possibly be?
 role: Photography, Art direction
 cardBg: "#ffffff"
 cardFg: "#000000"
-cover: https://framerusercontent.com/images/YjqGxEYZXM7WFlPNTNI8FB85Aw.jpg
+cover: /images/photography/cover.jpg
 order: 6
 visibility: public
 problem: |-
@@ -16,25 +16,25 @@ solution: |-
 
   Two parallel tracks. One feeds the other. The work I direct is shaped by knowing what it feels like to be the one holding the camera. The photos I take for myself are shaped by years of working out what a frame actually needs to do. Neither would be as good without the other. Both stay in the right place — the work belongs to the work, and the hobby belongs to me.
 gallery:
-  - src: https://framerusercontent.com/images/noTt27TADaZUlaWsg2F9RY44Y.jpg
+  - src: /images/photography/gallery-01.jpg
     alt: detroit, 2016
-  - src: https://framerusercontent.com/images/0IU514urVs1PQgJG9VxGEUUH7Kc.jpg
+  - src: /images/photography/gallery-02.jpg
     alt: japan, 2025
-  - src: https://framerusercontent.com/images/YjqGxEYZXM7WFlPNTNI8FB85Aw.jpg
+  - src: /images/photography/gallery-03.jpg
     alt: kyrgyzstan, 2024
-  - src: https://framerusercontent.com/images/yHlH5US9uztKSqW1KJq26kwr8.jpg
+  - src: /images/photography/gallery-04.jpg
     alt: japan, 2025
-  - src: https://framerusercontent.com/images/MQDdhVQvD0tZL2NZ2I8CPGXA.jpg
+  - src: /images/photography/gallery-05.jpg
     alt: manchester, 2023
-  - src: https://framerusercontent.com/images/qL6jdVElyV5yWoKr5EaMfZPZnk.jpg
+  - src: /images/photography/gallery-06.jpg
     alt: athens, 2008
-  - src: https://framerusercontent.com/images/eCRJNTFZ4HNRkneNHzOAgU68mo.png
+  - src: /images/photography/gallery-07.png
     alt: faroe islands, 2018
-  - src: https://framerusercontent.com/images/IZxzbpvfZp83dOqkFg2Fqv8j248.png
+  - src: /images/photography/gallery-08.png
     alt: capetown, 2019
-  - src: https://framerusercontent.com/images/rDjwSBOsEPZo6QhCFW8Lwvgjlf8.png
+  - src: /images/photography/gallery-09.png
     alt: japan, 2025
-  - src: https://framerusercontent.com/images/yCU0dKY1POPyThoR3Aq9RDin4.png
+  - src: /images/photography/gallery-10.png
     alt: kyrgyzstan, 2024
 ---
 

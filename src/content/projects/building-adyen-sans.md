@@ -7,7 +7,7 @@ role: Font design, Creative operations
 client: Adyen
 cardBg: "#ffffff"
 cardFg: "#000000"
-cover: https://framerusercontent.com/images/Po96Uw87uoD9RQHd4ZNVR7ousI.png
+cover: /images/building-adyen-sans/cover.png
 order: 3
 homeOrder: 3
 visibility: public
@@ -24,27 +24,27 @@ solution: |-
 
   We own our typeface. It works across every script, every screen, every surface we ship on. It scales without license fees scaling with it. It replaced a fragmented stack of third-party fonts with a single, unified voice — giving Adyen what most enterprise companies never get: a proprietary piece of brand infrastructure that belongs to us.
 gallery:
-  - src: https://framerusercontent.com/images/SuSxb7Z46tUeKbtowtsD7RCBiGc.jpg
+  - src: /images/building-adyen-sans/gallery-01.jpg
     alt: A quiet nod to where Adyen comes from. Mercator, designed by Dick Dooijes in the 1950s, was Amsterdam's answer to Helvetica — clean, rational, local. It became the starting point for the Latin foundation of Adyen Sans.
-  - src: https://framerusercontent.com/images/qdSrS0abupsEQnZYtLbjP9IdnLs.jpg
+  - src: /images/building-adyen-sans/gallery-02.jpg
     alt: The process in practice. Version A leaned more engineered, version B more human. The direction we committed to pulled from both — the mathematical precision of A with the rounded inner corners and momentum of B. The duality of "Engineered for Ambition" was decided before the final letterforms were.
-  - src: https://framerusercontent.com/images/HHRnROd7dOP8H26gFqvXgiIsyo.jpg
+  - src: /images/building-adyen-sans/gallery-03.jpg
     alt: The expressive version. Adyen Sans Brand is built for moments that need presence — headlines, campaigns, brand communication. Slightly warmer, slightly more personality, designed to carry identity across larger surfaces.
-  - src: https://framerusercontent.com/images/0xtIzbE1BIaiemjBKKo7ssDpqc.jpg
+  - src: /images/building-adyen-sans/gallery-04.jpg
     alt: The functional version. Optimized for small sizes and dense interfaces, Adyen Sans UI is what renders on dashboards, terminals, and product screens. Tighter, sharper, engineered for legibility when every pixel counts.
-  - src: https://framerusercontent.com/images/XM9J13rszFRc8NN59MygYfBDeE.jpg
+  - src: /images/building-adyen-sans/gallery-05.jpg
     alt: The technical companion. Mono carries the DNA of both Brand and UI, translated into a monospaced grid. Reserved for data labels, system status, code references, and anything that needs to feel machine-precise.
-  - src: https://framerusercontent.com/images/G9hnmW7mOMGKI8XafsBjjGR6RyE.gif
+  - src: /images/building-adyen-sans/gallery-06.gif
     alt: One of the least visible details, but perhaps one of the most important. Ascenders and descenders are re-engineered across Latin, Cyrillic, Greek, and beyond to hold a compact, balanced word image. Text sits properly in restricted digital containers without breaking or overlapping, whether it's a banner or an 8-pixel terminal screen.
-  - src: https://framerusercontent.com/images/WFciyiwPeOPWcMBk8CTTs5Myc.jpg
+  - src: /images/building-adyen-sans/gallery-07.jpg
     alt: "Arabic actually has inverse contrast compared to Latin: weight contrast happens horizontally, not vertically. Rather than force the script into a Latin framework, we built it on its own terms, with optical adjustments that keep bold weights from becoming vertically oversized. The result reads smoothly alongside Latin without one script visually dominating the other."
-  - src: https://framerusercontent.com/images/egOau2neqbSgEiPI9bIvG9Qeqc.gif
+  - src: /images/building-adyen-sans/gallery-08.gif
     alt: "The full system across scripts. Each one built with the same underlying logic, but designed with respect to the typographic history of its own language: Latin, Cyrillic, Arabic, and Hangul. No forced uniformity. Different scripts, same voice."
-  - src: https://framerusercontent.com/images/YSEO70Om1E76jDTTEWKSa3ZYOLw.gif
+  - src: /images/building-adyen-sans/gallery-09.gif
     alt: The font adapts itself. Variable font technology means Adyen Sans automatically optimizes for its context, scaling weight and optical size based on how and where it's rendered. The transition between Brand and UI is a spectrum, not a switch. One system, calibrated for every surface.
-  - src: https://framerusercontent.com/images/ipIIx9TCb6txmPl088LkYKB99IQ.gif
+  - src: /images/building-adyen-sans/gallery-10.gif
     alt: Latin characters typically sit on a smaller x-height than CJK glyphs, which are built on a square 1000-unit grid. When Latin and Japanese meet in the same line of text, the Latin set can look undersized. We deliberately upscaled the Latin portion to visually align with the Japanese characters — so mixed-language text reads as one coherent system, not two competing scripts.
-  - src: https://framerusercontent.com/images/niNDkYJ1RZwRykQxhLhDRouujE.gif
+  - src: /images/building-adyen-sans/gallery-11.gif
     alt: Not adapted. Drawn. Both scripts were custom-designed rather than extended from the Latin framework — Hangul with its modular syllable blocks re-proportioned for small-screen legibility, Arabic with its own contrast logic and regional variants (Urdu Heh Goal, Kurdish Nabira-Ra). Building a global typeface means respecting each script's own history, not forcing it to behave like Latin.
 ---
 

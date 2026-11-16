@@ -1,5 +1,6 @@
 ---
 import Arrow from './Arrow.astro';
+import { img } from '../lib/img';
 ---
 
 <section class="wrap section about reveal">
@@ -15,7 +16,7 @@ import Arrow from './Arrow.astro';
     </div>
     <div class="portrait">
       <img
-        src="https://framerusercontent.com/images/5N2qntQCPUeOJem27W3d57vVzjI.jpg"
+        {...img('/images/site/portrait.jpg', '(min-width: 810px) 38vw, 100vw')}
         alt="Portrait of Bas Brouwers"
         loading="lazy"
         decoding="async"
@@ -59,7 +60,7 @@ import Arrow from './Arrow.astro';
   .grain {
     position: absolute;
     inset: 0;
-    background: url('https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png');
+    background: url('/images/site/grain.png');
     background-size: 256px 256px;
     opacity: 0.08;
   }

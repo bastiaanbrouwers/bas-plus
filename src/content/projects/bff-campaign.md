@@ -7,7 +7,7 @@ role: Creative strategy, Content creation, Campaign strategy
 client: Adyen
 cardBg: "#e8dbd4"
 cardFg: "#000000"
-cover: https://framerusercontent.com/images/6SrKThTkOczBvano85ukmodKxI.png
+cover: /images/bff-campaign/cover.png
 order: 2
 homeOrder: 2
 visibility: public
@@ -23,17 +23,17 @@ videos:
   - https://youtu.be/LTygi7nmnrM
   - https://youtu.be/bc2M0yOaqOA
 gallery:
-  - src: https://framerusercontent.com/images/sD4BPNowPelXkJoUCUE7MnNXV3k.png
+  - src: /images/bff-campaign/gallery-01.png
     alt: Entrepreneurs engaging in a lively discussion during a Bizz Buzz networking event.
-  - src: https://framerusercontent.com/images/ujqROi0GyxOv4X5oWagQv1Z6F8.png
-  - src: https://framerusercontent.com/images/v4G0fCnNRSELPA40lo5uiuphUAA.jpg
+  - src: /images/bff-campaign/gallery-02.png
+  - src: /images/bff-campaign/gallery-03.jpg
 ---
 
 ### I'll be honest: I didn't expect what came out of those interviews. When you're working with some of the biggest businesses on the planet about payments, you assume the conversation is going to be about uptime, authorization rates, integrations. And yes, the technology was delivering. But that's not what kept coming up.
 
 It was the person on the other end of the phone. The account manager who knew their roadmap better than some internal stakeholders did. That insight, that Adyen's real differentiator is our people, became the entire brief. In a moment when the industry was talking about AI, we went the other way.
 
-![](https://framerusercontent.com/images/7pNcT4fTTrc324ZQ2OP0DCPFbH4.jpg)
+![](/images/bff-campaign/story-01.jpg)
 
 The campaign is built on a simple equation: 1 + 1 = 3. The payments give you reliability and scale. The people give you understanding and strategy. Together, they give you something neither can deliver alone: a partner who translates engineering power into actual business results. While competitors were hiding behind automation and black-box AI, we leaned into the one thing that's genuinely hard to replicate: a person who knows your name, knows your goals, and stays accountable as you grow. That's the "Adyen way" and it needed to be said out loud, preferably by our customers.
 

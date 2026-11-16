@@ -7,7 +7,7 @@ role: Creative Direction
 client: Adyen
 cardBg: "#f0e3a8"
 cardFg: "#3d3b54"
-cover: https://framerusercontent.com/images/oF1IZ6Lv81nPZswllVU5fKaC3E.jpg
+cover: /images/annual-report/cover.jpg
 order: 9
 visibility: public
 problem: |-
@@ -16,7 +16,7 @@ solution: |-
   I initiated a personal touch in the Annual report around personal experiences, photos and quotes of employees: from designers, product managers to our management board.
   For this I orchestrated a globally and "socially distanced" photoshoot in over 7 different countries. to capture employees in their own homes. This involved sourcing and remotely art-directing 12 different photographers to create a unified visual style.
 gallery:
-  - src: https://framerusercontent.com/images/uZHOVF5o53yM3doAHZ9deZemUy8.jpg
+  - src: /images/annual-report/gallery-01.jpg
 ---
 
 ### Transforming the report from a standard financial disclosure into a vibrant cultural showcase. The final output was highly acclaimed both internally and externally for its authenticity, successfully visualizing the resilience, a strong sense of belonging and culture despite the physical separation.

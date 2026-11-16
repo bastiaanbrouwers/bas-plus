@@ -7,7 +7,7 @@ role: Art direction, Video production, Content strategy, Creative operations
 client: Adyen
 cardBg: "#333333"
 cardFg: "#949494"
-cover: https://framerusercontent.com/images/E2ZNnheR7gn3OrBV4lnz3Okapc.jpg
+cover: /images/case-studies/cover.jpg
 order: 8
 visibility: public
 problem: |-
@@ -22,21 +22,21 @@ videos:
   - https://www.youtube.com/watch?v=_ZSSRin6OeA
   - https://www.youtube.com/watch?v=WTZifHVoktw
 gallery:
-  - src: https://framerusercontent.com/images/q75gSSqfAsdlhhhuowCjcChz1Hc.png
+  - src: /images/case-studies/gallery-01.png
     alt: A shot during the casestudy in the Rijksmuseum
-  - src: https://framerusercontent.com/images/8Psw3soQnyt0LmqegMhFTvo3lM.jpg
+  - src: /images/case-studies/gallery-02.jpg
     alt: Bijenkorf employees at work during the shoot of the casestudy
-  - src: https://framerusercontent.com/images/neTOsJfmNKPLqZAYemBYvNddk4.png
+  - src: /images/case-studies/gallery-03.png
     alt: Belmond employee making cocktails, photos for Belmond taken by me
-  - src: https://framerusercontent.com/images/KPSf8BLPKieTeCL6io9nHCpko.jpg
+  - src: /images/case-studies/gallery-04.jpg
     alt: Some elements of the Belmond hotel in Taormina, Sicily, photos for Belmond taken by me
-  - src: https://framerusercontent.com/images/tnp7Za2r3MTLznY5t48uXsrk7o.jpg
+  - src: /images/case-studies/gallery-05.jpg
     alt: Some elements of the Belmond hotel in Taormina, Sicily, photos for Belmond taken by me
 ---
 
 ### Case studies in fintech have a specific job to do that goes beyond marketing. We're operating in a technically complex industry, and the gap between what Adyen's platform actually does and what a CFO or Head of Payments understands it to do can be significant. Case studies are one of the few formats that can bridge that gap. Not through our words, but through our customers'. There's no more credible proof point than a business like Prada or the Rijksmuseum explaining in plain language what the technology did for them.
 
-![](https://framerusercontent.com/images/Ze9a2Tz8ILdywFSxafTt4kAXPs.png)
+![](/images/case-studies/story-01.png)
 
 Getting there required more than a tiering system. It meant giving our account management teams a clear framework, they finally knew when to request what, and could set proper expectations with clients from the start. No more awkward conversations about why one customer got a full video production and another got a PDF. The system gave everyone clarity, and that clarity showed up in the work.
 

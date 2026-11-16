@@ -7,7 +7,7 @@ role: Strategy, Design, Creative Direction
 client: Adyen
 cardBg: "#ffffff"
 cardFg: "#000000"
-cover: https://framerusercontent.com/images/vft5kqk8UZAfDiYtZXuUkekxFQ.png
+cover: /images/selling-luxury/cover.png
 order: 4
 homeOrder: 4
 visibility: public
@@ -18,10 +18,10 @@ solution: |-
 
   80+ books sent. The kind of response that doesn't happen with email,— actual reply emails from C-suite, mentions in meetings, screenshots shared internally at prospect companies. And four new enterprise clients closed off the back of it. For an outreach campaign at this level, that's an extraordinary conversion rate — but the real win is harder to measure. The book changed how prospects thought of Adyen before the first sales call. It said we understand your world without anyone having to say it.
 gallery:
-  - src: https://framerusercontent.com/images/vft5kqk8UZAfDiYtZXuUkekxFQ.png
-  - src: https://framerusercontent.com/images/bpO8oldiankCfpVtfRIWWWSrM.png
-  - src: https://framerusercontent.com/images/I4Dz68LXiFUEPuICOUUNyuSDqY.png
-  - src: https://framerusercontent.com/images/wevpbi5Ihp0OpmBBovoQu8HhOs.png
+  - src: /images/selling-luxury/gallery-01.png
+  - src: /images/selling-luxury/gallery-02.png
+  - src: /images/selling-luxury/gallery-03.png
+  - src: /images/selling-luxury/gallery-04.png
 ---
 
 The best work I've done at so far often starts with a question that isn't really about design: _where can creative actually move the business needle?_ The marketing team is the obvious answer. But marketing's job is to attract. Sales' job is to close. And the gap between those two is often where the most interesting creative problems live, because it's where the brand promise has to become a brand experience.

@@ -4,3 +4,7 @@ dist/
 .wrangler/
 .DS_Store
 .env
+
+# generated at build time
+public/images/_w/
+src/data/image-variants.json

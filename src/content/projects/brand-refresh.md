@@ -7,7 +7,7 @@ role: Design, Creative direction
 client: Adyen
 cardBg: "#ffffff"
 cardFg: "#00d16a"
-cover: https://framerusercontent.com/images/Cu8rcrikXrRgH9QR17E3f5kjLOc.png
+cover: /images/brand-refresh/cover.png
 order: 1
 homeOrder: 1
 visibility: public
@@ -20,31 +20,31 @@ solution: |-
 videos:
   - https://youtu.be/I4ldNCXOEYQ
 gallery:
-  - src: https://framerusercontent.com/images/CVMurwMblMMJWPmvG6SLWguDhE.png
+  - src: /images/brand-refresh/gallery-01.png
     alt: Some elements of the rebrand, from datavizualisation to product, to illustration and merchandise
-  - src: https://framerusercontent.com/images/MXFfGK1ZtT04YzhdRs8UWclCmNo.png
+  - src: /images/brand-refresh/gallery-02.png
     alt: INSPIRE — This used the hero video or campaign header. Using photography showing real people and real impact. Using big type and sharp copy, leading with the outcome.
-  - src: https://framerusercontent.com/images/gbFDELW5So9fXC5h2Kh0I3N6CBs.png
+  - src: /images/brand-refresh/gallery-03.png
     alt: |-
       INSPIRE — Our photography is putting our customers front and center, which is where they belong. We built for our customers. We intentionally don’t show them in a meeting or behind a computer, they are driven by action and conviction. They should inspire ambition and using natural lighting slight upward perspectives we’re trying to accomplish this. Differentiating by showcasing the tangible, human outcomes of our technology rather than the tech itself. Tying back perfectly to our "Ambition" brand value by portraying our customers as driven, emotive, and relentless in achieving their goals.
-  - src: https://framerusercontent.com/images/1fpdy9L5XRYOrwUbr90vRC7NC4.png
+  - src: /images/brand-refresh/gallery-04.png
     alt: EXPLAIN — This is the part where we want to give more context about our product. And honestly, our product can be complicated from time to time. That’s why this layer is essential in the scheme of things. We’re showing technical elements relating to our products and data, and illustrations that explain more abstract concepts to our audience.
-  - src: https://framerusercontent.com/images/YE06DSRUu6h0RNrZ4gc0DdTytw.png
+  - src: /images/brand-refresh/gallery-05.png
     alt: EXPLAIN — With less photography we’re actively pursuing the warmth in this element by adding warmer “contextual” colors to our brand in this part.
-  - src: https://framerusercontent.com/images/zJv0aX2h3QOLzFZ2JJFGEj398.png
+  - src: /images/brand-refresh/gallery-06.png
     alt: EXPLAIN — A slight grain is added to our illustrations and graphs to add a similar effect as our cinematic grain-like photography.
-  - src: https://framerusercontent.com/images/B0aHK3q0xzhOeHkjmZq98qZ1Y.png
+  - src: /images/brand-refresh/gallery-07.png
     alt: EXPLAIN — Our illustrations are bridging the gap between technology and a personal touch, by showing human intervention.
-  - src: https://framerusercontent.com/images/CMQZ1J3CiCBJVwD2CApoJbdNjqw.png
-  - src: https://framerusercontent.com/images/ezT8Ll8eMEAlL2LVUhzSbiGmIr8.png
+  - src: /images/brand-refresh/gallery-08.png
+  - src: /images/brand-refresh/gallery-09.png
     alt: SHOW —  Maybe our proudest moment is when we get to demo our product. Show off how that tech actually works, and how it can benefit our customers business. Product pages or live demo’s showing our product, from physical terminal in real life situations, to technical dashboards.
-  - src: https://framerusercontent.com/images/6VRfj1xNtyNyXzqtLfiQ7ENgvA.png
+  - src: /images/brand-refresh/gallery-10.png
     alt: SHOW — Paired with real-life photography where suitable, we prefer to ground our products in the real world.
-  - src: https://framerusercontent.com/images/T90iuetq4zYBwgmqLNgCt4OcE.png
+  - src: /images/brand-refresh/gallery-11.png
     alt: PROVE — Earlier the data was doing the heavy lifting, now we need to prove the impact it’s making. Here we choose to let our customers and the data do the talking. Our data callouts are designed to do just that.
-  - src: https://framerusercontent.com/images/q7cgntEHN2gzdbxQmpSzcGkbls.png
+  - src: /images/brand-refresh/gallery-12.png
     alt: PROVE — Still anchoring it in physical reality by showing the context of our customers in video’s and photography, adding contextual colors. But keeping the data and proof front and center.
-  - src: https://framerusercontent.com/images/FDQM1ddkw2o4pZO4y1DPWnInw5g.png
+  - src: /images/brand-refresh/gallery-13.png
     alt: PROVE — Where context is needed, we add data visualation. Here we support with warm colors and add grain to balance the facts & figures.
 ---
 
@@ -52,7 +52,7 @@ gallery:
 
 A designer in Amsterdam and a copywriter in New York might have been both working "on brand" and producing different things. Not because they were careless, but because the brand gave them a vibe, not a behavior. We turned abstract ideals into actionable principles. _Cut the jargon. Create with context. Make fewer, better things._ If a piece of work couldn't pass those filters, it wasn't done yet.
 
-![](https://framerusercontent.com/images/Wqk1OP9B2RX1CrmoRXd3uUKbJA.png)
+![](/images/brand-refresh/story-01.png)
 
 The visual system came from the same logic. "Engineered for Ambition" is a duality that we build on strategically in our Creative platform: precision and humanity, structure and warmth. So we built a visual language that actually carries both. Adyen Mono and strict grids for the technical proof points. Adyen Sans and cinematic photography for the human story. And in between, a new illustration style that bridges the two, engineered shapes with a tactile, human grain. A way to show and explain the digital concepts that aren't always able to explain in photography or copy, it was the visual glue we were missing.
 

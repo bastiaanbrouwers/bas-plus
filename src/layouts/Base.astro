@@ -13,7 +13,7 @@ interface Props {
 const {
   title = 'bas brouwers - strategic creative director',
   description = 'a strategic creative director with a thing for making complex things clear, building teams that actually ship, brand, content & AI and the work behind the work',
-  image = 'https://framerusercontent.com/assets/Nl1fcH3IRXSe6rc7JmywGI36Jp4.jpg',
+  image = 'https://bas.plus/images/site/og.jpg',
   noindex = false,
 } = Astro.props;
 
@@ -36,7 +36,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:image" content={image} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#000000" />
-    <link rel="preconnect" href="https://framerusercontent.com" />
     <script is:inline>
       document.documentElement.classList.remove('no-js');
     </script>

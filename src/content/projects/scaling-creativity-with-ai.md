@@ -7,7 +7,7 @@ role: Creative operations, Scalability
 client: Adyen
 cardBg: "#ffffff"
 cardFg: "#000000"
-cover: https://framerusercontent.com/images/AExEmaVAD2BguiFIiEs69zEY9Jk.png
+cover: /images/scaling-creativity-with-ai/cover.png
 order: 7
 visibility: public
 problem: |-
@@ -26,10 +26,10 @@ solution: |-
 
   The real outcome is harder to put in a number: we're building a creative function that scales with AI instead of being replaced by it. Where the system handles the repetitive, rules-based work and the team focuses on the strategy, the craft, and the stories that actually matter.
 gallery:
-  - src: https://framerusercontent.com/images/BVLudoe4trLYDllgKNagcJqtjk.gif
-  - src: https://framerusercontent.com/images/Um5hrWfM3HnzwIIgzwJa4gC3Ek.jpg
-  - src: https://framerusercontent.com/images/UmVug7UxoGmihbc47sN5irdgUhE.jpg
-  - src: https://framerusercontent.com/images/JU9Nv7YoIS7x3Xf8zKlySBNJ8.jpg
+  - src: /images/scaling-creativity-with-ai/gallery-01.gif
+  - src: /images/scaling-creativity-with-ai/gallery-02.jpg
+  - src: /images/scaling-creativity-with-ai/gallery-03.jpg
+  - src: /images/scaling-creativity-with-ai/gallery-04.jpg
 ---
 
 This project started from a frustration I'd had for years. Every creative operations problem I'd solved before: templates, guidelines, asset libraries, brand portals. We kept asking marketers to act like designers, and designers to act like production managers, and neither group was happy or effective. The tools we were buying were built for a world where creative ops meant "faster static ads." That's not the world anymore.

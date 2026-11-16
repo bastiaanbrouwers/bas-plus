@@ -32,7 +32,15 @@ One markdown file per project. This is the single source of truth.
 
 ## Images
 
-Images still load from framerusercontent.com. Before cancelling Framer, move them into `public/images/` or Cloudflare R2 and update the paths.
+Figma is where images are managed. The repo holds the published copies.
+
+- Figma file "Portfolio" (key `Q98U6mNyvhUMQIfi2vRMdx`), page "site images". One section per project.
+- Every image is a frame named by its slot, like `brand-refresh/gallery-03.png`. The slot is the address: the file lives at `public/images/<slot>` and content refers to `/images/<slot>`.
+- `scripts/image-slots.json` lists every slot the site uses. Regenerate it with `npm run images:slots` after adding or removing images in content.
+- `.github/workflows/figma-sync.yml` runs hourly and on demand. It runs `scripts/sync-figma.mjs`: reads each frame's original image fill, checks it, writes changed files to `public/images`, commits and pushes. It needs the `FIGMA_TOKEN` repository secret. It fails without publishing when a slot is missing, a frame has no image, names clash or a GIF slot gets a still image.
+- To add an image: add the slot path to the project's content, run `npm run images:slots`, then duplicate a frame in Figma and give it the new slot name.
+- `scripts/optimise-images.mjs` runs before every build and writes WebP variants (800, 1600, 2400 px, GIFs as animated WebP) to `public/images/_w`. Templates use `img()` from `src/lib/img.ts`. Markdown images go through `src/lib/rehype-images.mjs`. Both are generated, not committed.
+- `scripts/framer-to-figma.mjs` and its workflow were the one-off import from Framer. They run again only if `.github/image-jobs.json` is committed.
 
 ## Working phases
 

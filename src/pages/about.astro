@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import SayHello from '../components/SayHello.astro';
+import { img } from '../lib/img';
 
 // Copied from the "Process Step" components on the Framer about page.
 const roles = [
@@ -74,7 +75,7 @@ const facts = [
   <section class="wrap section grid8 me">
     <div class="portrait reveal">
       <img
-        src="https://framerusercontent.com/images/5N2qntQCPUeOJem27W3d57vVzjI.jpg"
+        {...img('/images/site/portrait.jpg', '(min-width: 810px) 50vw, 100vw')}
         alt="Portrait of Bas Brouwers"
         loading="lazy"
         decoding="async"
@@ -167,7 +168,7 @@ const facts = [
   .grain {
     position: absolute;
     inset: 0;
-    background: url('https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png');
+    background: url('/images/site/grain.png');
     background-size: 256px 256px;
     opacity: 0.08;
   }

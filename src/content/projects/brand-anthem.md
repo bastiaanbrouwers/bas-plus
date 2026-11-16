@@ -7,7 +7,7 @@ role: Creative cirection, Campaign strategy
 client: Adyen
 cardBg: "#2e3538"
 cardFg: "#b3ffcb"
-cover: https://framerusercontent.com/images/sRdbTId092xmDkiQGwSqQk8kv70.gif
+cover: /images/brand-anthem/cover.gif
 order: 5
 homeOrder: 5
 visibility: public
@@ -21,16 +21,16 @@ solution: |-
 videos:
   - https://youtu.be/3btpaMEu--w
 gallery:
-  - src: https://framerusercontent.com/images/ajMgwgV4l5zc3ZBFF8pZPKr4S74.gif
-  - src: https://framerusercontent.com/images/TLDfpWAi1grVNiZ0k01qR6Syt0.gif
+  - src: /images/brand-anthem/gallery-01.gif
+  - src: /images/brand-anthem/gallery-02.gif
     alt: Finding creative ways to visualize old, archaic, legacy systems
-  - src: https://framerusercontent.com/images/My54KFR2GynNEtWp2Ef7yLV7w.gif
+  - src: /images/brand-anthem/gallery-03.gif
     alt: This is the first time we thought about visualizing our platform, but it had to be modern and transparant
 ---
 
 ### The brief going in was deceptively simple: pivot to Financial technology and (in the process) make Adyen more known. The real challenge was more uncomfortable, we'd been spending a lot of money on work that didn't stick.
 
-![](https://framerusercontent.com/images/O7zaarN1dq47IcJBd6ygmfTvDo.jpg)
+![](/images/brand-anthem/story-01.jpg)
 
 The insight that unlocked everything was leaning into what Adyen actually is. Not a payments company that sounds exciting. A company built by engineers, for serious enterprise businesses, that delivers on what it promises. Engineered for Ambition wasn't a tagline we invented, it was a truth we named.
 

@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import SayHello from '../../components/SayHello.astro';
 import Arrow from '../../components/Arrow.astro';
 import { allProjects, publicProjects, youtubeEmbed, pad } from '../../lib/projects';
+import { img } from '../../lib/img';
 import { render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -28,7 +29,7 @@ const others = (await publicProjects()).filter((p) => p.id !== entry.id);
 
     <figure class="wrap cover reveal">
       <p class="label small">00</p>
-      <img src={d.cover} alt="" loading="eager" decoding="async" />
+      <img {...img(d.cover, '100vw')} alt="" loading="eager" decoding="async" />
     </figure>
 
     {
@@ -91,11 +92,11 @@ const others = (await publicProjects()).filter((p) => p.id !== entry.id);
     {
       d.gallery.length > 0 && (
         <section class="wrap section gallery">
-          {d.gallery.map((img, i) => (
+          {d.gallery.map((g, i) => (
             <figure class="shot reveal">
               <p class="label small">{pad(i + 1)}</p>
-              <img src={img.src} alt={img.alt} loading="lazy" decoding="async" />
-              {img.alt && <figcaption class="small">{img.alt}</figcaption>}
+              <img {...img(g.src, '100vw')} alt={g.alt} loading="lazy" decoding="async" />
+              {g.alt && <figcaption class="small">{g.alt}</figcaption>}
             </figure>
           ))}
         </section>
@@ -110,7 +111,7 @@ const others = (await publicProjects()).filter((p) => p.id !== entry.id);
             <li class="reveal">
               <a href={`/work/${p.id}/`} style={`--card-bg:${p.data.cardBg};--card-fg:${p.data.cardFg}`}>
                 <span class="thumb">
-                  <img src={p.data.cover} alt="" loading="lazy" decoding="async" />
+                  <img {...img(p.data.cover, '25vw')} alt="" loading="lazy" decoding="async" />
                 </span>
                 <span class="txt">
                   <span class="small cat">{p.data.discipline}</span>

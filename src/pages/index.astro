@@ -43,23 +43,38 @@ const phrases = [
 </Base>
 
 <script>
+  // Each phrase gets a slot as tall as the tallest phrase, so long phrases can wrap
+  // without pushing the page around when they rotate in.
+  const rot = document.querySelector<HTMLElement>('.hero .rot');
   const track = document.querySelector<HTMLElement>('.hero .track');
-  if (track && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const total = track.children.length - 1;
-    let i = 0;
-    setInterval(() => {
-      i += 1;
-      const step = (track.children[0] as HTMLElement).getBoundingClientRect().height;
-      track.style.transition = 'transform 0.7s cubic-bezier(0.7, 0, 0.2, 1)';
-      track.style.transform = `translateY(${-i * step}px)`;
-      if (i === total) {
-        setTimeout(() => {
-          track.style.transition = 'none';
-          track.style.transform = 'translateY(0)';
-          i = 0;
-        }, 750);
-      }
-    }, 2600);
+  if (rot && track) {
+    const spans = [...track.children] as HTMLElement[];
+    let step = 0;
+    const fit = () => {
+      spans.forEach((s) => (s.style.height = 'auto'));
+      step = Math.max(...spans.map((s) => s.getBoundingClientRect().height));
+      spans.forEach((s) => (s.style.height = `${step}px`));
+      rot.style.height = `${step}px`;
+    };
+    fit();
+    document.fonts?.ready.then(fit);
+    addEventListener('resize', fit);
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const total = spans.length - 1;
+      let i = 0;
+      setInterval(() => {
+        i += 1;
+        track.style.transition = 'transform 0.7s cubic-bezier(0.7, 0, 0.2, 1)';
+        track.style.transform = `translateY(${-i * step}px)`;
+        if (i === total) {
+          setTimeout(() => {
+            track.style.transition = 'none';
+            track.style.transform = 'translateY(0)';
+            i = 0;
+          }, 750);
+        }
+      }, 2600);
+    }
   }
 </script>
 
@@ -73,10 +88,9 @@ const phrases = [
     color: var(--white);
   }
   .rot {
-    display: inline-flex;
+    display: block;
     height: 1.25em;
     overflow: hidden;
-    vertical-align: bottom;
   }
   .track {
     display: flex;
@@ -84,8 +98,6 @@ const phrases = [
   }
   .track span {
     display: block;
-    height: 1.25em;
-    white-space: nowrap;
   }
   .cards {
     display: flex;
@@ -100,15 +112,6 @@ const phrases = [
   @media (max-width: 809.98px) {
     .hero {
       padding-top: calc(var(--nav-h) + 56px);
-    }
-    /* Phrases wrap on phones, so each slot is two lines tall */
-    .rot {
-      display: flex;
-      height: 2.5em;
-    }
-    .track span {
-      height: 2.5em;
-      white-space: normal;
     }
     .cards {
       gap: 40px;
