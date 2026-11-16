@@ -43,9 +43,8 @@ async function run(job) {
   const result = { slot: job.slot, bytes: buf.length, saved: `public/images/${job.slot}` };
   if (job.submitUrl) {
     const up = await shrinkForFigma(buf, ext);
-    const fd = new FormData();
-    fd.append('file', new Blob([up], { type }), basename(job.slot));
-    const r = await fetch(job.submitUrl, { method: 'POST', body: fd });
+    // Raw bytes, so Figma keeps the frame's slot name instead of renaming it to the file name.
+    const r = await fetch(job.submitUrl, { method: 'POST', headers: { 'content-type': type }, body: up });
     const text = await r.text();
     result.figma = r.ok ? 'uploaded' : `failed ${r.status}: ${text.slice(0, 200)}`;
     if (up !== buf) result.shrunkForFigma = up.length;
