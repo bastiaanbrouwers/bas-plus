@@ -54,7 +54,9 @@ function findSlots(node, out = []) {
 
 async function main() {
   if (!TOKEN) {
-    console.log('FIGMA_TOKEN is not set. Add it as a repository secret to enable the sync.');
+    const msg = 'FIGMA_TOKEN is not set. Add it under Settings, Secrets and variables, Actions to turn on the sync.';
+    console.log(`::warning::${msg}`);
+    if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, `## Figma image sync\n\n${msg}\n`);
     return;
   }
   let sharp = null;
