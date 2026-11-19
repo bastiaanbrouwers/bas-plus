@@ -43,4 +43,21 @@ const projects = defineCollection({
   }),
 });
 
-export const collections = { projects };
+// Tailored pages at bas.plus/[company]. Noindex, out of the sitemap, never linked.
+const tailored = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/tailored' }),
+  schema: z.object({
+    company: z.string(),
+    role: z.string(),
+    roleUrl: z.string().url().optional(),
+    // The company's brand colour. Replaces the green accent on this page.
+    accent: z.string(),
+    intro: z.string(),
+    projects: z
+      .array(z.object({ slug: z.string(), why: z.string() }))
+      .min(3)
+      .max(4),
+  }),
+});
+
+export const collections = { projects, tailored };

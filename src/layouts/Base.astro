@@ -8,6 +8,8 @@ interface Props {
   description?: string;
   image?: string;
   noindex?: boolean;
+  /** Replaces the green accent, used on tailored pages */
+  accent?: string;
 }
 
 const {
@@ -15,13 +17,14 @@ const {
   description = 'a strategic creative director with a thing for making complex things clear, building teams that actually ship, brand, content & AI and the work behind the work',
   image = 'https://bas.plus/images/site/og.jpg',
   noindex = false,
+  accent,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en" class="no-js" style={accent ? `--green:${accent}` : undefined}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

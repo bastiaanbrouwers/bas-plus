@@ -1,0 +1,141 @@
+---
+/**
+ * Tailored pages at bas.plus/[company].
+ * Content lives in src/content/tailored/<company>.md.
+ * Noindex, out of the sitemap, never linked from the site.
+ */
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import SayHello from '../components/SayHello.astro';
+import Arrow from '../components/Arrow.astro';
+import { allProjects } from '../lib/projects';
+
+export async function getStaticPaths() {
+  const RESERVED = ['projects', 'work', 'about', 'contact', '404'];
+  const pages = await getCollection('tailored');
+  const projects = await allProjects();
+  return pages.map((page) => {
+    if (RESERVED.includes(page.id)) throw new Error(`"${page.id}" is a reserved slug`);
+    const picks = page.data.projects.map(({ slug, why }) => {
+      const project = projects.find((p) => p.id === slug);
+      if (!project) throw new Error(`${page.id}: unknown project "${slug}"`);
+      if (project.data.visibility === 'private') throw new Error(`${page.id}: "${slug}" is private`);
+      return { project, why };
+    });
+    return { params: { company: page.id }, props: { page, picks } };
+  });
+}
+
+const { page, picks } = Astro.props;
+const { company, role, roleUrl, accent, intro } = page.data;
+---
+
+<Base title={`bas + ${company.toLowerCase()}`} description={`bas brouwers for ${company}, ${role}`} accent={accent} noindex>
+  <section class="wrap head reveal">
+    <p class="label small">.for {company.toLowerCase()}</p>
+    <h1 class="h1 title">Bas <span class="plus">+</span> <span class="co">{company}</span></h1>
+    <p class="small role">
+      {roleUrl ? <a href={roleUrl} target="_blank" rel="noopener">{role} <Arrow /></a> : role}
+    </p>
+  </section>
+
+  <section class="wrap intro reveal">
+    <div class="grid8">
+      <p class="body text">{intro}</p>
+    </div>
+  </section>
+
+  <section class="wrap list">
+    <p class="label small reveal">.3 projects</p>
+    {
+      picks.map(({ project, why }, i) => (
+        <div class="grid8 row reveal">
+          <div class="card-col">
+            <ProjectCard slug={project.id} {...project.data} eager={i === 0} />
+          </div>
+          <p class="why small">{why}</p>
+          <span class="marker" style="bottom:-12px" />
+        </div>
+      ))
+    }
+  </section>
+
+  <SayHello />
+</Base>
+
+<style>
+  .head {
+    padding-top: calc(var(--nav-h) + 24px);
+  }
+  .title {
+    margin-top: 48px;
+  }
+  .co {
+    color: var(--green);
+  }
+  .plus {
+    color: var(--white-50);
+  }
+  .role {
+    margin-top: 16px;
+  }
+  .role a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--white);
+  }
+  .role a:hover {
+    color: var(--green);
+  }
+  .intro {
+    padding-top: 96px;
+    padding-bottom: 120px;
+  }
+  .text {
+    grid-column: 1 / span 6;
+    color: var(--white);
+  }
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+  }
+  .row {
+    position: relative;
+    align-items: start;
+  }
+  .card-col {
+    grid-column: 1 / span 6;
+  }
+  .why {
+    grid-column: 7 / span 2;
+    padding: 4px 0 0 24px;
+    color: var(--white);
+  }
+  @media (max-width: 1023.98px) {
+    .text {
+      grid-column: 1 / span 8;
+    }
+    .list {
+      gap: 64px;
+    }
+    .intro {
+      padding-top: 64px;
+      padding-bottom: 80px;
+    }
+  }
+  @media (max-width: 809.98px) {
+    .card-col,
+    .why {
+      grid-column: 1 / -1;
+    }
+    .why {
+      padding: 16px 0 0;
+    }
+    .list {
+      gap: 48px;
+    }
+  }
+</style>
