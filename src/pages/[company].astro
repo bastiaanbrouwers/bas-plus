@@ -47,7 +47,7 @@ const { company, role, roleUrl, accent, intro } = page.data;
   </section>
 
   <section class="wrap list">
-    <p class="label small reveal">.3 projects</p>
+    <p class="label small reveal">.{picks.length} projects</p>
     {
       picks.map(({ project, why }, i) => (
         <div class="grid8 row reveal">
