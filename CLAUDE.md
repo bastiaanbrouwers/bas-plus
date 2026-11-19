@@ -15,7 +15,8 @@ bas.plus is the primary domain for portfolio, projects and freelance work.
 
 One markdown file per project. This is the single source of truth.
 
-- Frontmatter: title, year, discipline, tagline, role, client, cardBg, cardFg, cover, problem, solution, videos, gallery (src + alt), order, homeOrder, visibility, tags.
+- Frontmatter: title, year, discipline, tagline, role, client, cardBg, cardFg, cover, problem, solution, videos, gallery (src + alt), order, homeOrder, visibility, tags, href.
+- `href`: optional outside link, like a playable prototype. Cards open it in a new window instead of `/work/<slug>/`, and the project page shows a "play it" button.
 - Body: the story, in markdown.
 - `visibility`: `public` shows on /projects. `unlisted` only appears on tailored pages. `private` is for NDA work, password only.
 - `homeOrder`: set it to put a project in the homepage stack.
@@ -24,9 +25,10 @@ One markdown file per project. This is the single source of truth.
 ## Tailored pages
 
 - One file per company in `src/content/tailored/<company>.md`. The file name is the URL: `ramp.md` becomes `bas.plus/ramp`.
-- Frontmatter: company, role, roleUrl, accent (their brand colour, replaces the green on that page), intro (one paragraph), projects (3 to 4, each a slug plus a one-line why).
+- Frontmatter: company, role, roleUrl, accent (their brand colour, replaces the green on that page), favicon (optional, an .svg in `public/favicons/` with `-32.png` and `-180.png` beside it, used on that page and the projects it opens, never on the rest of the site), intro (one paragraph), projects (3 to 5, each a slug plus a one-line why).
 - Built by `src/pages/[company].astro`. Noindex, never linked. No menu and no footer links. Project cards open `/work/<slug>/?via=<company>`, which hides the menu there too, shows a back link and keeps the company colour. Contact buttons become an email link. The build fails on a reserved slug, an unknown project or a private project.
-- Live: ramp (Principal Brand Designer).
+- Live: ramp (Principal Brand Designer). Leads with receipt-rush, a game that opens in a new window.
+- receipt-rush/cover.jpg: the Figma frame holds a 480px preview copy. `scripts/figma-sync-state.json` pins its hash so the sync keeps the full-size file in the repo. Pasting a new image into that frame replaces it as usual.
 
 ## Design system (from Framer)
 

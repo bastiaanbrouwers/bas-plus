@@ -13,12 +13,15 @@ interface Props {
   eager?: boolean;
   /** Tailored page slug, keeps the visitor in that context */
   via?: string;
+  /** Outside link. The card opens it in a new window instead of the project page. */
+  href?: string;
 }
 
-const { slug, title, year, discipline, cardBg, cardFg, cover, eager = false, via } = Astro.props;
+const { slug, title, year, discipline, cardBg, cardFg, cover, eager = false, via, href } = Astro.props;
+const link = href ?? `/work/${slug}/${via ? `?via=${via}` : ''}`;
 ---
 
-<a href={`/work/${slug}/${via ? `?via=${via}` : ''}`} class="card" style={`--card-bg:${cardBg};--card-fg:${cardFg}`}>
+<a href={link} target={href ? '_blank' : undefined} rel={href ? 'noopener' : undefined} class="card" style={`--card-bg:${cardBg};--card-fg:${cardFg}`}>
   <div class="meta small">
     <span>{year}</span>
     <span>{discipline}</span>
@@ -26,7 +29,7 @@ const { slug, title, year, discipline, cardBg, cardFg, cover, eager = false, via
   <div class="rule"></div>
   <div class="head">
     <h2 class="h2 title">{title}</h2>
-    <span class="arrow"><Arrow dir="right" size={36} /></span>
+    <span class="arrow"><Arrow dir={href ? 'up' : 'right'} size={36} /></span>
   </div>
   <div class="media">
     <img {...img(cover, '(min-width: 810px) 75vw, 100vw')} alt="" loading={eager ? 'eager' : 'lazy'} decoding="async" />

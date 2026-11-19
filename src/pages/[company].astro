@@ -29,11 +29,11 @@ export async function getStaticPaths() {
 }
 
 const { page, picks } = Astro.props;
-const { company, role, roleUrl, accent, intro } = page.data;
+const { company, role, roleUrl, accent, intro, favicon } = page.data;
 const paragraphs = intro.split(/\n\s*\n/);
 ---
 
-<Base title={`bas + ${company.toLowerCase()}`} description={`bas brouwers for ${company}, ${role}`} accent={accent} noindex bare>
+<Base title={`bas + ${company.toLowerCase()}`} description={`bas brouwers for ${company}, ${role}`} accent={accent} favicon={favicon} noindex bare>
   <section class="wrap head">
     <h1 class="title" aria-label={`Bas + ${company}`}>
       <span class="w" style="--d:0"><span>Bas</span></span>
@@ -76,9 +76,11 @@ const paragraphs = intro.split(/\n\s*\n/);
   <SayHello />
 </Base>
 
-<script is:inline define:vars={{ via: page.id, accent }}>
+<script is:inline define:vars={{ via: page.id, accent, favicon: favicon ?? '' }}>
   try {
     sessionStorage.setItem('via-accent-' + via, accent);
+    if (favicon) sessionStorage.setItem('via-favicon-' + via, favicon);
+    else sessionStorage.removeItem('via-favicon-' + via);
   } catch (e) {}
 </script>
 
