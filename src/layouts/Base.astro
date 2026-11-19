@@ -10,6 +10,8 @@ interface Props {
   noindex?: boolean;
   /** Replaces the green accent, used on tailored pages */
   accent?: string;
+  /** Hide the menu and footer links, for tailored pages */
+  bare?: boolean;
 }
 
 const {
@@ -18,13 +20,14 @@ const {
   image = 'https://bas.plus/images/site/og.jpg',
   noindex = false,
   accent,
+  bare = false,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
-<html lang="en" class="no-js" style={accent ? `--green:${accent}` : undefined}>
+<html lang="en" class:list={["no-js", { bare }]} style={accent ? `--green:${accent}` : undefined}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -41,6 +44,18 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta name="theme-color" content="#000000" />
     <script is:inline>
       document.documentElement.classList.remove('no-js');
+      // Visitors from a tailored page (?via=ramp) stay in that context.
+      (function () {
+        var via = new URLSearchParams(location.search).get('via');
+        if (!via || !/^[a-z0-9-]+$/.test(via)) return;
+        var root = document.documentElement;
+        root.classList.add('bare');
+        root.dataset.via = via;
+        try {
+          var accent = sessionStorage.getItem('via-accent-' + via);
+          if (accent && /^#[0-9a-f]{3,8}$/i.test(accent)) root.style.setProperty('--green', accent);
+        } catch (e) {}
+      })();
     </script>
   </head>
   <body>
@@ -49,7 +64,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
         <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
       </div>
     </div>
-    <Nav />
+    {!bare && <Nav />}
+    <a class="via-back small" href="/" hidden>&larr; back</a>
     <main>
       <slot />
     </main>
@@ -67,6 +83,27 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
         { rootMargin: '0px 0px -10% 0px' },
       );
       document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+      // In tailored context: point the back link home, keep contact on email.
+      const root = document.documentElement;
+      if (root.classList.contains('bare')) {
+        const via = root.dataset.via;
+        const back = document.querySelector<HTMLAnchorElement>('.via-back');
+        if (via && back) {
+          back.href = `/${via}/`;
+          back.hidden = false;
+        }
+        document.querySelectorAll<HTMLAnchorElement>('a[href="/contact"]').forEach((a) => {
+          a.href = 'mailto:basbrouwers@me.com';
+        });
+        if (via) {
+          document.querySelectorAll<HTMLAnchorElement>('a[href^="/work/"]').forEach((a) => {
+            const u = new URL(a.href);
+            u.searchParams.set('via', via);
+            a.href = u.pathname + u.search;
+          });
+        }
+      }
     </script>
   </body>
 </html>

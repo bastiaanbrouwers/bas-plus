@@ -326,3 +326,21 @@ figure {
     transition: none !important;
   }
 }
+
+/* Tailored context: no way into the rest of the site */
+.bare .nav,
+.bare .footer .links,
+.bare .other {
+  display: none !important;
+}
+.via-back {
+  position: absolute;
+  top: 32px;
+  left: var(--pad);
+  z-index: 10;
+  color: var(--white-50);
+  transition: color 0.2s ease;
+}
+.via-back:hover {
+  color: var(--green);
+}

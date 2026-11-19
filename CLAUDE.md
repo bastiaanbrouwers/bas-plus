@@ -25,7 +25,7 @@ One markdown file per project. This is the single source of truth.
 
 - One file per company in `src/content/tailored/<company>.md`. The file name is the URL: `ramp.md` becomes `bas.plus/ramp`.
 - Frontmatter: company, role, roleUrl, accent (their brand colour, replaces the green on that page), intro (one paragraph), projects (3 to 4, each a slug plus a one-line why).
-- Built by `src/pages/[company].astro`. Noindex, never linked. The build fails on a reserved slug, an unknown project or a private project.
+- Built by `src/pages/[company].astro`. Noindex, never linked. No menu and no footer links. Project cards open `/work/<slug>/?via=<company>`, which hides the menu there too, shows a back link and keeps the company colour. Contact buttons become an email link. The build fails on a reserved slug, an unknown project or a private project.
 - Live: ramp (Principal Brand Designer).
 
 ## Design system (from Framer)

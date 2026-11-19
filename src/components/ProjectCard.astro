@@ -11,12 +11,14 @@ interface Props {
   cardFg: string;
   cover: string;
   eager?: boolean;
+  /** Tailored page slug, keeps the visitor in that context */
+  via?: string;
 }
 
-const { slug, title, year, discipline, cardBg, cardFg, cover, eager = false } = Astro.props;
+const { slug, title, year, discipline, cardBg, cardFg, cover, eager = false, via } = Astro.props;
 ---
 
-<a href={`/work/${slug}/`} class="card" style={`--card-bg:${cardBg};--card-fg:${cardFg}`}>
+<a href={`/work/${slug}/${via ? `?via=${via}` : ''}`} class="card" style={`--card-bg:${cardBg};--card-fg:${cardFg}`}>
   <div class="meta small">
     <span>{year}</span>
     <span>{discipline}</span>
