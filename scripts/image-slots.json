@@ -469,6 +469,13 @@
     "caption": ""
   },
   {
+    "slot": "receipt-rush/cover.jpg",
+    "project": "receipt rush",
+    "slug": "receipt-rush",
+    "kind": "cover",
+    "caption": ""
+  },
+  {
     "slot": "site/portrait.jpg",
     "project": "site",
     "slug": "site",

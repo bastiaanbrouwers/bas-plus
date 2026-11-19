@@ -25,6 +25,15 @@ const others = (await publicProjects()).filter((p) => p.id !== entry.id);
       <div class="grid8 desc-row reveal">
         <p class="h3 desc">{d.tagline}</p>
       </div>
+      {
+        d.href && (
+          <div class="play-row reveal">
+            <a class="btn cta" href={d.href} target="_blank" rel="noopener">
+              play it <Arrow />
+            </a>
+          </div>
+        )
+      }
     </header>
 
     <figure class="wrap cover reveal">
@@ -136,6 +145,9 @@ const others = (await publicProjects()).filter((p) => p.id !== entry.id);
     padding-top: calc(var(--nav-h) + 24px);
   }
   .desc-row {
+    margin-top: 32px;
+  }
+  .play-row {
     margin-top: 32px;
   }
   .desc {

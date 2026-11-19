@@ -3,6 +3,7 @@ company: Ramp
 role: Principal Brand Designer
 roleUrl: https://jobs.ashbyhq.com/ramp/72c3ef8f-e390-4ee1-9c0d-83b7b616ee17
 accent: "#e4f222"
+favicon: /favicons/ramp.svg
 intro: |-
   I've recently read Paul Jun's article on running "brand like software". It's been fascinating and aligns perfectly with how I've been building at Adyen, another fintech, where I've spent nine years building the brand exactly that way, especially in the last year. I rebuilt our brand as a decision framework, so every team (and agent) knows what to make at each stage of the buyer journey. I commissioned a typeface that now runs across product, terminals and marketing, in Latin, Arabic and Hangul (Korean).
 
@@ -10,6 +11,8 @@ intro: |-
 
   Systems are able to carry a whole brand, but people give it something to say. I'd love to help build both at Ramp.
 projects:
+  - slug: receipt-rush
+    why: "you asked for something with AI, so here is a game. designed in figma, built in claude. it opens in a new window, best on your phone."
   - slug: brand-refresh
     why: "coherence over consistency. one brand with four modes: inspire, explain, show, prove. each has its own job."
   - slug: bff-campaign

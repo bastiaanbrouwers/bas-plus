@@ -31,6 +31,8 @@ const projects = defineCollection({
     homeOrder: z.number().optional(),
     // public: main projects page. unlisted: tailored pages only. private: password only.
     visibility: z.enum(['public', 'unlisted', 'private']).default('public'),
+    // Optional outside link, like a playable prototype. Cards open it in a new window instead of /work/<slug>/.
+    href: z.string().url().optional(),
     // Phase 2 fills these
     tags: z
       .object({
@@ -53,10 +55,12 @@ const tailored = defineCollection({
     // The company's brand colour. Replaces the green accent on this page.
     accent: z.string(),
     intro: z.string(),
+    // Optional favicon for this page only, like /favicons/ramp.svg. The rest of the site keeps its own.
+    favicon: z.string().optional(),
     projects: z
       .array(z.object({ slug: z.string(), why: z.string() }))
       .min(3)
-      .max(4),
+      .max(5),
   }),
 });
 

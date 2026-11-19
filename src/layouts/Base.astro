@@ -12,6 +12,8 @@ interface Props {
   accent?: string;
   /** Hide the menu and footer links, for tailored pages */
   bare?: boolean;
+  /** Page-only favicon (an .svg in /favicons), used on tailored pages */
+  favicon?: string;
 }
 
 const {
@@ -21,6 +23,7 @@ const {
   noindex = false,
   accent,
   bare = false,
+  favicon,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -42,6 +45,15 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:image" content={image} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#000000" />
+    {
+      favicon && (
+        <>
+          <link rel="icon" type="image/svg+xml" href={favicon} />
+          <link rel="icon" type="image/png" sizes="32x32" href={favicon.replace(/\.svg$/, '-32.png')} />
+          <link rel="apple-touch-icon" href={favicon.replace(/\.svg$/, '-180.png')} />
+        </>
+      )
+    }
     <script is:inline>
       document.documentElement.classList.remove('no-js');
       // Visitors from a tailored page (?via=ramp) stay in that context.
@@ -54,6 +66,15 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
         try {
           var accent = sessionStorage.getItem('via-accent-' + via);
           if (accent && /^#[0-9a-f]{3,8}$/i.test(accent)) root.style.setProperty('--green', accent);
+          // Keep the tailored page's favicon on the projects it opens.
+          var icon = sessionStorage.getItem('via-favicon-' + via);
+          if (icon && /^\/favicons\/[a-z0-9-]+\.svg$/.test(icon)) {
+            var l = document.createElement('link');
+            l.rel = 'icon';
+            l.type = 'image/svg+xml';
+            l.href = icon;
+            document.head.appendChild(l);
+          }
         } catch (e) {}
       })();
     </script>
