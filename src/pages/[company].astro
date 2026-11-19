@@ -42,7 +42,7 @@ const { company, role, roleUrl, accent, intro } = page.data;
 
   <section class="wrap intro reveal">
     <div class="grid8">
-      <p class="body text">{intro}</p>
+      <div class="text">{intro.split(/\n\s*\n/).map((para) => <p class="body">{para}</p>)}</div>
     </div>
   </section>
 
@@ -95,6 +95,11 @@ const { company, role, roleUrl, accent, intro } = page.data;
   }
   .text {
     grid-column: 1 / span 6;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+  }
+  .text p {
     color: var(--white);
   }
   .list {
